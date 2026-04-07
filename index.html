@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Escuela de Danza Carolina Martín | Arte y Excelencia en Getafe</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#600016",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#880525",
+                        "on-primary-container": "#ff8e95",
+                        "background": "#fcf9f8",
+                        "surface": "#fcf9f8",
+                        "on-surface": "#1c1b1b",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface-variant": "#5a403c",
+                        "outline": "#8e706b",
+                        "outline-variant": "#e3beb8",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container": "#f0edec",
+                        "surface-container-high": "#ebe7e7",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'reveal': 'reveal 0.8s cubic-bezier(0, 0, 0.2, 1) forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        reveal: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background: rgba(252, 249, 248, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .reveal { opacity: 0; }
+        .reveal.active { animation: reveal 0.8s forwards; }
+        .bg-flamenco {
+            background-image: url('/hero-bright-theme.png');
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav flex justify-between items-center px-8 py-4 transition-all duration-300" id="main-nav">
+        <div class="flex items-center gap-4">
+             <div class="w-10 h-10 rounded-full flex items-center justify-center bg-black shadow-lg">
+                <span class="text-white font-headline text-sm font-bold">CM</span>
+            </div>
+            <div class="font-headline text-xl font-bold text-primary tracking-tight hidden sm:block">Escuela de Danza Carolina Martín</div>
+        </div>
+        <div class="hidden lg:flex gap-10 items-center">
+            <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#actividades">Actividades</a>
+            <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#estudios">Plan Estudios</a>
+            <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#precios">Precios</a>
+            <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#contacto">Contacto</a>
+        </div>
+        <button class="bg-primary text-on-primary px-6 py-2.5 text-xs font-label font-bold tracking-widest uppercase hover:bg-primary-container transition-all rounded-full shadow-lg">
+            Prueba Gratis
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-start px-8 md:px-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-flamenco bg-cover bg-[center_right_5%] opacity-90"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl pt-20">
+            <span class="text-primary font-label font-bold tracking-[0.3em] uppercase mb-4 block animate-reveal">Centro oficial APDE</span>
+            <h1 class="font-headline text-6xl md:text-[6.5rem] leading-[0.9] mb-8 text-on-surface animate-reveal" style="animation-delay: 0.1s">
+                Donde el <span class="italic text-primary font-normal">arte</span> cobra vida en Getafe
+            </h1>
+            <p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-xl mb-12 leading-relaxed animate-reveal" style="animation-delay: 0.2s">
+                Formación profesional y amateur en una academia de alto rendimiento. Elevamos el talento a través del rigor técnico y la pasión.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 animate-reveal" style="animation-delay: 0.3s">
+                <button class="bg-primary text-on-primary px-10 py-5 text-sm font-label font-bold tracking-widest uppercase hover:bg-primary-container transition-all flex items-center gap-4 rounded-full shadow-xl shadow-primary/20 group">
+                    Reservar clase de prueba
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+                <button class="px-10 py-5 text-sm font-label font-bold tracking-widest uppercase border border-primary/20 hover:border-primary transition-all rounded-full">
+                    Consultar Horarios
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40 animate-bounce">
+            <span class="text-[10px] uppercase font-label tracking-[0.4em]">Scroll</span>
+            <div class="w-[1px] h-12 bg-on-surface"></div>
+        </div>
+    </header>
+
+    <!-- Activity Grid -->
+    <section id="actividades" class="py-32 px-8 md:px-24 bg-surface">
+        <div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-12 reveal">
+            <div class="max-w-2xl">
+                <span class="text-primary font-label font-bold tracking-[0.3em] uppercase mb-4 block">Disciplinas</span>
+                <h2 class="font-headline text-5xl md:text-7xl text-on-surface">El Arte en Movimiento</h2>
+            </div>
+            <p class="font-body text-on-surface-variant max-w-md italic border-l-2 border-primary/20 pl-8 leading-relaxed">
+                Una oferta diversa diseñada para elevar el talento, desde los primeros pasos hasta la profesionalización técnica avanzada.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+            <!-- Card 1 -->
+            <div class="md:col-span-8 group relative overflow-hidden h-[650px] rounded-2xl reveal">
+                <img alt="Pies de flamenca" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" src="/flamenco-feet.png"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-12 text-white">
+                    <span class="font-label text-[10px] tracking-[0.4em] uppercase opacity-70 mb-4 block italic">Especialidad Insignia</span>
+                    <h3 class="font-headline text-4xl mb-6">Danza Española y Flamenco</h3>
+                    <p class="font-body text-sm max-w-md opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0 leading-relaxed">
+                        El rigor de la técnica clásica española fusionado con la fuerza y el duende del flamenco más puro. Formación APDE integral.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="md:col-span-4 bg-surface-container-low p-12 flex flex-col justify-between border-t-2 border-primary rounded-2xl reveal">
+                <div>
+                    <h3 class="font-headline text-3xl mb-10">Danza Moderna</h3>
+                    <ul class="space-y-6 font-body text-on-surface-variant">
+                        <li class="flex items-center gap-4 group">
+                            <span class="material-symbols-outlined text-primary scale-90 group-hover:scale-110 transition-transform">check_circle</span> 
+                            <span class="font-semibold">Urban Dance & Hip Hop</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="material-symbols-outlined text-primary scale-90 group-hover:scale-110 transition-transform">check_circle</span> 
+                            <span class="font-semibold">Zumba Fitness Platinum</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="material-symbols-outlined text-primary scale-90 group-hover:scale-110 transition-transform">check_circle</span> 
+                            <span class="font-semibold">Jumping Fitness HI</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative overflow-hidden rounded-xl h-48 mt-12 grayscale group hover:grayscale-0 transition-all duration-700">
+                     <img alt="Urban Dance Group" class="w-full h-full object-cover" src="/urban-dance.png"/>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="md:col-span-5 group relative overflow-hidden h-[500px] rounded-2xl reveal">
+                <img alt="Yoga" class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 transition-transform duration-[1.5s] group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmFtoVIarDoM4Xv8iNa2qgkh1Qv8R4H-fLCk9qQNxj5gAS85UrUZ7YEci7vBYtXdyP_cHkVzIigfYa9EZw1GSNt9EAvEgSCAFj8gsB2MW9NcQtLbO0AGkf5qWFdzMWJYIUmRyjOgGgiBph0ZrgMWHqFs--8YqFk0CAaJdtY64jFnLCamWTJEKxYQjdB_dhaTflJ8F_KVwrOZZH1bkX2i_PJ0pBJNr3nhG6ALxUcEVvCAMJmZToP4IbdtHspXyi5vwmGFcFWqqFRJY"/>
+                <div class="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-8 left-8 right-8 bg-surface/95 backdrop-blur-md p-10 rounded-xl shadow-2xl">
+                    <h3 class="font-headline text-3xl mb-2">Wellbeing</h3>
+                    <p class="font-body text-on-surface-variant leading-relaxed">Yoga, Pilates y clases pre-mamá. Un santuario para el equilibrio cuerpo-mente.</p>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="md:col-span-7 bg-surface-container p-12 md:p-16 flex flex-col md:flex-row gap-12 items-center rounded-2xl reveal">
+                <div class="flex-1">
+                    <span class="text-primary font-label text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">Futuras Promesas</span>
+                    <h3 class="font-headline text-4xl lg:text-5xl mb-6">Baby Dance & APDE</h3>
+                    <p class="font-body text-on-surface-variant text-lg leading-relaxed mb-10">
+                        Iniciación desde los 3 años. Forjando la base técnica necesaria para acceder a los grados profesionales con titulación oficial.
+                    </p>
+                    <button class="inline-flex items-center gap-3 text-xs font-label font-bold tracking-[0.3em] uppercase text-primary border-b border-primary/20 pb-2 hover:border-primary transition-all">Ver Niveles</button>
+                </div>
+                <div class="relative w-56 h-56 shrink-0">
+                    <div class="absolute -inset-4 border border-primary/10 rounded-full animate-pulse"></div>
+                    <img alt="Kids" class="w-full h-full rounded-full object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBunb8wDzFn16qcFqU1cpbGa0tgjkaijxrzRj5KXD3HAtaiY-ak12nRMN7n6FqI8m_tElg72xCSP46_HoZ59RO9CRP12sqzwuovL1jQD21M_IBU4Bxp0TIyalmCPBkJgosvz9rfj9NiDeohHEOsqS_pXRG3z0hGZpjHsvClpqkeuOqE9mvbVUWMPrQAwwoOxi-s1XRAHeQj0Tp-j5l35xvsrBmZZlJvlMGLqlAfFYy0ymGVk2lJC-6RRin6cBJ-pCojj6DgymSwK8w"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan de Estudios Detallado -->
+    <section id="estudios" class="py-32 px-8 md:px-24 bg-surface-container-lowest relative overflow-hidden">
+        <div class="container mx-auto">
+            <div class="mb-24 text-center reveal">
+                <span class="text-primary font-label font-bold tracking-[0.3em] uppercase mb-4 block">Diplomaturas Oficiales</span>
+                <h2 class="font-headline text-5xl md:text-6xl mb-6">Carreras Profesionales</h2>
+                <p class="font-body text-on-surface-variant text-lg max-w-2xl mx-auto italic">
+                    Formación de alto rendimiento avalada por la Certificación APDE, diseñada para forjar los artistas del mañana.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
+                <!-- Danza Española -->
+                <div class="bg-surface p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all reveal">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                    </div>
+                    <h3 class="font-headline text-2xl mb-4">Danza Española</h3>
+                    <p class="text-xs font-label font-bold tracking-widest text-primary mb-8 uppercase">Plan de 7 Años</p>
+                    <ul class="space-y-4 font-body text-sm text-on-surface-variant">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Curso Preparatorio:</strong> Opcional para cimentar las bases.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Grado Elemental:</strong> Cuatro cursos de técnica base.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Grado Medio:</strong> Tres cursos de especialización profesional.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Examen de Música:</strong> Evaluación rítmica integral.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ballet Clásico -->
+                <div class="bg-surface p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all reveal" style="animation-delay: 0.1s">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined">settings_accessibility</span>
+                    </div>
+                    <h3 class="font-headline text-2xl mb-4">Ballet Clásico</h3>
+                    <p class="text-xs font-label font-bold tracking-widest text-primary mb-8 uppercase">Plan de 7 Años</p>
+                    <ul class="space-y-4 font-body text-sm text-on-surface-variant">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Grado Elemental:</strong> Cuatro cursos de rigor técnico.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Grado Medio:</strong> Tres cursos de perfeccionamiento.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Examen de Música:</strong> Teoría y práctica aplicada.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Flamenco -->
+                <div class="bg-surface p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all reveal" style="animation-delay: 0.2s">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-8">
+                        <span class="material-symbols-outlined">flare</span>
+                    </div>
+                    <h3 class="font-headline text-2xl mb-4">Flamenco</h3>
+                    <p class="text-xs font-label font-bold tracking-widest text-primary mb-8 uppercase">Plan de 5 Años</p>
+                    <ul class="space-y-4 font-body text-sm text-on-surface-variant">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Curso Preparatorio:</strong> Introducción al compás (Opcional).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold">•</span>
+                            <span><strong>Cursos Obligatorios:</strong> Cinco años de formación pura en tablao y técnica.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Título Profesional Superior APDE -->
+            <div class="bg-primary p-12 md:p-20 rounded-[3rem] text-white shadow-2xl relative overflow-hidden reveal">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-white/60 font-label font-bold tracking-[0.4em] uppercase mb-6 block">Máxima Excelencia</span>
+                        <h2 class="font-headline text-4xl md:text-5xl mb-8">Título Profesional Superior APDE</h2>
+                        <p class="font-body text-lg text-white/80 leading-relaxed mb-10">
+                            Una titulación oficial avalada por el Ministerio de Empleo, diseñada para formar no solo artistas, sino docentes y profesionales del sector.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="px-6 py-3 bg-white/10 rounded-full text-xs font-bold tracking-widest uppercase">Formación Artística</div>
+                            <div class="px-6 py-3 bg-white/10 rounded-full text-xs font-bold tracking-widest uppercase">Formación Pedagógica</div>
+                            <div class="px-6 py-3 bg-white/10 rounded-full text-xs font-bold tracking-widest uppercase">Formación Complementaria</div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8 bg-black/20 p-8 md:p-12 rounded-3xl backdrop-blur-md">
+                        <div class="flex gap-6">
+                            <div class="text-primary-fixed-dim font-headline text-4xl italic">01</div>
+                            <div>
+                                <h4 class="font-headline text-xl mb-1">Diferenciación Artística</h4>
+                                <p class="text-sm text-white/60">El bloque artístico es el elemento diferencial según la especialidad seleccionada.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 border-t border-white/10 pt-8">
+                            <div class="text-primary-fixed-dim font-headline text-4xl italic">02</div>
+                            <div>
+                                <h4 class="font-headline text-xl mb-1">Bloques Comunes</h4>
+                                <p class="text-sm text-white/60">La formación pedagógica y complementaria son troncales para garantizar la calidad docente.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 border-t border-white/10 pt-8">
+                            <div class="text-primary-fixed-dim font-headline text-4xl italic">03</div>
+                            <div>
+                                <h4 class="font-headline text-xl mb-1">Reconocimiento Oficial</h4>
+                                <p class="text-sm text-white/60">Diplomas certificados por los órganos competentes de las Comunidades Autónomas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="precios" class="py-32 px-8 md:px-24 bg-surface">
+        <div class="text-center mb-24 reveal">
+            <h2 class="font-headline text-5xl md:text-6xl mb-6">Planes de Formación</h2>
+            <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Price Card 1 -->
+            <div class="bg-surface-container-lowest p-12 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all hover:shadow-2xl reveal">
+                <h3 class="font-headline text-3xl mb-2">Infantil</h3>
+                <p class="text-on-surface-variant text-[10px] font-label uppercase tracking-[0.3em] font-bold mb-10">Desde los 3 años</p>
+                <div class="mb-12 flex items-baseline gap-2">
+                    <span class="text-5xl font-headline font-bold text-primary">35€</span>
+                    <span class="text-on-surface-variant opacity-60">/mes</span>
+                </div>
+                <ul class="space-y-6 mb-12 font-body text-sm text-on-surface-variant">
+                    <li class="flex justify-between border-b border-surface-container pb-4"><span>1 hora semanal</span> <span class="material-symbols-outlined text-primary text-sm">verified</span></li>
+                    <li class="flex justify-between border-b border-surface-container pb-4"><span>Iniciación Baby Dance</span> <span class="material-symbols-outlined text-primary text-sm">verified</span></li>
+                    <li class="flex justify-between border-b border-surface-container pb-4"><span>Preparación APDE</span> <span class="material-symbols-outlined text-primary text-sm">verified</span></li>
+                </ul>
+                <button class="w-full py-5 text-xs font-label font-bold tracking-[0.2em] uppercase border border-primary/20 hover:bg-primary hover:text-on-primary transition-all rounded-full">Consultar</button>
+            </div>
+            
+            <!-- Price Card 2 -->
+            <div class="bg-primary p-12 rounded-3xl text-white transform md:-translate-y-8 shadow-2xl reveal">
+                <div class="inline-block px-4 py-1.5 bg-white/10 rounded-full text-[9px] font-label font-bold tracking-[0.4em] uppercase mb-4">Más Popular</div>
+                <h3 class="font-headline text-3xl mb-2">Adultos</h3>
+                <p class="opacity-70 text-[10px] font-label uppercase tracking-[0.3em] font-bold mb-10">Niveles Iniciación & Medio</p>
+                <div class="mb-12 flex items-baseline gap-2">
+                    <span class="text-5xl font-headline font-bold">45€</span>
+                    <span class="opacity-50">/mes</span>
+                </div>
+                <ul class="space-y-6 mb-12 font-body text-sm">
+                    <li class="flex justify-between border-b border-white/10 pb-4"><span>2 horas semanales</span> <span class="material-symbols-outlined text-sm">stars</span></li>
+                    <li class="flex justify-between border-b border-white/10 pb-4"><span>Sin matrícula</span> <span class="material-symbols-outlined text-sm">stars</span></li>
+                    <li class="flex justify-between border-b border-white/10 pb-4"><span>Talleres intensivos</span> <span class="material-symbols-outlined text-sm">stars</span></li>
+                </ul>
+                <button class="w-full py-5 text-xs font-label font-bold tracking-[0.2em] uppercase bg-white text-primary hover:bg-white/90 transition-all rounded-full">Reservar Plaza</button>
+            </div>
+            
+            <!-- Price Card 3 -->
+            <div class="bg-surface-container-lowest p-12 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all hover:shadow-2xl reveal">
+                <h3 class="font-headline text-3xl mb-2">Mañanas</h3>
+                <p class="text-on-surface-variant text-[10px] font-label uppercase tracking-[0.3em] font-bold mb-10">Horario Reducido</p>
+                <div class="mb-12 flex items-baseline gap-2">
+                    <span class="text-5xl font-headline font-bold text-primary">28€</span>
+                    <span class="text-on-surface-variant opacity-60">/mes</span>
+                </div>
+                <ul class="space-y-6 mb-12 font-body text-sm text-on-surface-variant">
+                    <li class="flex justify-between border-b border-surface-container pb-4"><span>Pilates & Yoga</span> <span class="material-symbols-outlined text-primary text-sm">verified</span></li>
+                    <li class="flex justify-between border-b border-surface-container pb-4"><span>Grupos reducidos</span> <span class="material-symbols-outlined text-primary text-sm">verified</span></li>
+                    <li class="flex justify-between border-b border-surface-container pb-4"><span>Atención Premium</span> <span class="material-symbols-outlined text-primary text-sm">verified</span></li>
+                </ul>
+                <button class="w-full py-5 text-xs font-label font-bold tracking-[0.2em] uppercase border border-primary/20 hover:bg-primary hover:text-on-primary transition-all rounded-full">Ver Horarios</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Contact -->
+    <section id="contacto" class="py-32 px-8 md:px-24 bg-surface-container-lowest">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-[3rem] overflow-hidden shadow-2xl border border-primary/5">
+            <div class="bg-white p-12 md:p-20 flex flex-col justify-center reveal">
+                <h2 class="font-headline text-4xl mb-12">Visítanos en el corazón de Getafe</h2>
+                <div class="space-y-12">
+                    <div class="flex gap-8 items-start group">
+                        <div class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                             <span class="material-symbols-outlined text-2xl">location_on</span>
+                        </div>
+                        <div>
+                            <p class="font-headline text-xl mb-1">Calle Emilia Pardo Bazán, 4</p>
+                            <p class="font-body text-on-surface-variant italic">28903 Getafe, Madrid</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-8 items-start group">
+                         <div class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                            <span class="material-symbols-outlined text-2xl">schedule</span>
+                        </div>
+                        <div>
+                            <p class="font-headline text-xl mb-1">Horarios de Secretaría</p>
+                            <p class="font-body text-on-surface-variant text-sm">Lunes a Viernes: 10:00 - 13:30 | 17:00 - 21:00</p>
+                            <p class="font-body text-on-surface-variant text-sm">Sábados: 10:00 - 14:00</p>
+                        </div>
+                    </div>
+                    <div class="pt-8 flex flex-col sm:flex-row gap-6">
+                        <a class="inline-flex items-center justify-center gap-4 bg-[#128C7E] text-white px-10 py-5 rounded-full font-label font-bold tracking-widest uppercase hover:bg-[#075E54] transition-all shadow-xl shadow-[#128C7E]/20" href="https://wa.me/34633152009">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                         <a class="inline-flex items-center justify-center gap-4 bg-primary text-on-primary px-10 py-5 rounded-full font-label font-bold tracking-widest uppercase hover:bg-primary-container transition-all shadow-xl shadow-primary/20" href="tel:+34633152009">
+                            <span class="material-symbols-outlined">call</span>
+                            Llamar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[600px] md:h-auto grayscale contrast-125 transition-all duration-[2s] hover:grayscale-0 reveal">
+                <iframe allowfullscreen="" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3043.626335147817!2d-3.7291706!3d40.3013233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4189f7f4460593%3A0x6a0c5c3e0e7a8e0!2sEscuela%20de%20Danza%20Carolina%20Martin!5e0!3m2!1ses!2ses!4v1712512345678!5m2!1ses!2ses" style="border:0" width="100%"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#110c0c] text-white py-24 px-8 md:px-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-24 mb-20">
+                <!-- Branding -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center bg-black shadow-lg">
+                            <span class="text-white font-headline text-sm font-bold">CM</span>
+                        </div>
+                        <div class="font-headline text-2xl font-bold tracking-tight text-white/95">Carolina Martín</div>
+                    </div>
+                    <p class="font-body text-base text-white/60 leading-relaxed italic mb-8">
+                        "El rigor de la técnica clásica fusionado con la pasión del flamenco más puro."
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300">
+                             <span class="material-symbols-outlined text-xl text-white/80">camera</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300">
+                            <span class="material-symbols-outlined text-xl text-white/80">brand_awareness</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-label text-xs font-bold tracking-[0.3em] uppercase text-white mb-8">Navegación</h4>
+                    <ul class="space-y-4 font-body text-white/70">
+                        <li><a class="hover:text-white transition-colors flex items-center gap-2" href="#actividades"><span class="w-1 h-1 rounded-full bg-primary-container"></span> Actividades</a></li>
+                        <li><a class="hover:text-white transition-colors flex items-center gap-2" href="#estudios"><span class="w-1 h-1 rounded-full bg-primary-container"></span> Carreras Profesionales</a></li>
+                        <li><a class="hover:text-white transition-colors flex items-center gap-2" href="#precios"><span class="w-1 h-1 rounded-full bg-primary-container"></span> Tarifas</a></li>
+                        <li><a class="hover:text-white transition-colors flex items-center gap-2" href="#contacto"><span class="w-1 h-1 rounded-full bg-primary-container"></span> Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-label text-xs font-bold tracking-[0.3em] uppercase text-white mb-8">Contacto</h4>
+                    <div class="space-y-6 font-body text-white/70">
+                        <div class="flex gap-4 items-start group">
+                            <span class="material-symbols-outlined text-primary-container text-xl">location_on</span>
+                            <p class="text-sm group-hover:text-white transition-colors">Calle Emilia Pardo Bazán, 4<br>28903 Getafe, Madrid</p>
+                        </div>
+                        <div class="flex gap-4 items-start group">
+                            <span class="material-symbols-outlined text-primary-container text-xl">call</span>
+                            <p class="text-sm group-hover:text-white transition-colors">+34 91 683 01 02</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal / Credits -->
+                <div>
+                    <h4 class="font-label text-xs font-bold tracking-[0.3em] uppercase text-white mb-8">Legal</h4>
+                    <p class="font-body text-xs text-white/40 mb-6 leading-relaxed">
+                        © 2024 Escuela de Danza Carolina Martín.<br>Todos los derechos reservados.
+                    </p>
+                    <div class="pt-6 border-t border-white/5">
+                         <p class="font-label text-[9px] font-bold tracking-[0.4em] uppercase text-white/20">Diseño para Aidially</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating (Mobile) -->
+    <a href="https://wa.me/34633152009" target="_blank" class="fixed bottom-8 right-8 z-50 w-16 h-16 bg-[#128C7E] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all lg:hidden">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Reveal on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+
+        // Logo scroll effect
+        window.onscroll = function() {
+            const nav = document.getElementById('main-nav');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('py-2', 'shadow-xl');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-2', 'shadow-xl');
+                nav.classList.add('py-4');
+            }
+        };
+    </script>
+</body>
+</html>
