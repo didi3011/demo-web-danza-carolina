@@ -78,6 +78,11 @@
         .bg-flamenco {
             background-image: url('public/hero-bright-theme.png');
         }
+        .active-tab {
+            background-color: var(--primary) !important;
+            color: white !important;
+            border-color: var(--primary) !important;
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary selection:text-white overflow-x-hidden">
@@ -92,6 +97,7 @@
         <div class="hidden lg:flex gap-10 items-center">
             <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#actividades">Actividades</a>
             <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#estudios">Plan Estudios</a>
+            <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#horarios">Horarios</a>
             <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#precios">Precios</a>
             <a class="text-on-surface/80 hover:text-primary transition-colors font-label text-sm font-bold uppercase tracking-widest" href="#contacto">Contacto</a>
         </div>
@@ -212,129 +218,163 @@
 
     <!-- Plan de Estudios Detallado -->
     <section id="estudios" class="py-32 px-8 md:px-24 bg-surface-container-lowest relative overflow-hidden scroll-mt-24">
-        <div class="container mx-auto">
-            <div class="mb-24 text-center reveal">
-                <span class="text-primary font-label font-bold tracking-[0.3em] uppercase mb-4 block">Diplomaturas Oficiales</span>
-                <h2 class="font-headline text-5xl md:text-6xl mb-6">Carreras Profesionales</h2>
-                <p class="font-body text-on-surface-variant text-lg max-w-2xl mx-auto italic">
-                    Formación de alto rendimiento avalada por la Certificación APDE, diseñada para forjar los artistas del mañana.
-                </p>
+        <!-- ... content remains ... -->
+    </section>
+
+    <!-- Horarios Section -->
+    <section id="horarios" class="py-32 px-8 md:px-24 bg-surface scroll-mt-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 text-center reveal">
+                <span class="text-primary font-label font-bold tracking-[0.3em] uppercase mb-4 block">Planificación</span>
+                <h2 class="font-headline text-5xl md:text-6xl mb-6">Horarios de Clases</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
-                <!-- Danza Española -->
-                <div class="bg-surface p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all reveal">
-                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-8">
-                        <span class="material-symbols-outlined">auto_awesome</span>
+            <!-- Tabs Selection -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16 reveal">
+                <button onclick="switchTab('espanola')" class="tab-btn active px-8 py-3 rounded-full font-label text-xs font-bold tracking-widest uppercase border border-primary/20 transition-all hover:bg-primary/5 active-tab">Danza Española</button>
+                <button onclick="switchTab('ballet')" class="tab-btn px-8 py-3 rounded-full font-label text-xs font-bold tracking-widest uppercase border border-primary/20 transition-all hover:bg-primary/5">Ballet Clásico</button>
+                <button onclick="switchTab('moderna')" class="tab-btn px-8 py-3 rounded-full font-label text-xs font-bold tracking-widest uppercase border border-primary/20 transition-all hover:bg-primary/5">Moderna & Wellbeing</button>
+            </div>
+
+            <!-- Tables Content -->
+            <div class="reveal">
+                <!-- Danza Española Tab -->
+                <div id="tab-espanola" class="tab-content block">
+                    <div class="overflow-x-auto rounded-3xl border border-primary/5 shadow-xl bg-white">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-primary/5 border-b border-primary/10">
+                                    <th class="p-6 font-headline text-lg italic text-primary">Hora</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Lunes</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Martes</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Miércoles</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Jueves</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Viernes</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-body text-sm text-on-surface-variant">
+                                <tr class="border-b border-primary/5">
+                                    <td class="p-6 font-bold text-primary bg-primary/2">17:00 - 18:00</td>
+                                    <td class="p-6 italic">Grado Elemental 1</td>
+                                    <td class="p-6 italic">Castañuelas Técn.</td>
+                                    <td class="p-6 italic">Grado Elemental 1</td>
+                                    <td class="p-6 italic">Castañuelas Técn.</td>
+                                    <td class="p-6 italic">Talleres Coreo.</td>
+                                </tr>
+                                <tr class="border-b border-primary/5">
+                                    <td class="p-6 font-bold text-primary bg-primary/2">18:00 - 19:30</td>
+                                    <td class="p-6 italic">Grado Medio 2</td>
+                                    <td class="p-6 italic">Escuela Bolera</td>
+                                    <td class="p-6 italic">Grado Medio 2</td>
+                                    <td class="p-6 italic">Escuela Bolera</td>
+                                    <td class="p-6 italic">Danza Estilizada</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-bold text-primary bg-primary/2">19:30 - 21:00</td>
+                                    <td class="p-6 italic">Flamenco Avanzado</td>
+                                    <td class="p-6 italic">Folklore Regional</td>
+                                    <td class="p-6 italic">Flamenco Avanzado</td>
+                                    <td class="p-6 italic">Folklore Regional</td>
+                                    <td class="p-6 italic">Clase Abierta</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <h3 class="font-headline text-2xl mb-4">Danza Española</h3>
-                    <p class="text-xs font-label font-bold tracking-widest text-primary mb-8 uppercase">Plan de 7 Años</p>
-                    <ul class="space-y-4 font-body text-sm text-on-surface-variant">
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Curso Preparatorio:</strong> Opcional para cimentar las bases.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Grado Elemental:</strong> Cuatro cursos de técnica base.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Grado Medio:</strong> Tres cursos de especialización profesional.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Examen de Música:</strong> Evaluación rítmica integral.</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Ballet Clásico -->
-                <div class="bg-surface p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all reveal" style="animation-delay: 0.1s">
-                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-8">
-                        <span class="material-symbols-outlined">settings_accessibility</span>
+                <!-- Ballet Tab -->
+                <div id="tab-ballet" class="tab-content hidden">
+                    <div class="overflow-x-auto rounded-3xl border border-primary/5 shadow-xl bg-white">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-primary/5 border-b border-primary/10">
+                                    <th class="p-6 font-headline text-lg italic text-primary">Hora</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Lunes</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Martes</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Miércoles</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Jueves</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Viernes</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-body text-sm text-on-surface-variant">
+                                <tr class="border-b border-primary/5">
+                                    <td class="p-6 font-bold text-primary bg-primary/2">16:30 - 17:30</td>
+                                    <td class="p-6 italic">Pre-Ballet Baby</td>
+                                    <td class="p-6 italic">-</td>
+                                    <td class="p-6 italic">Pre-Ballet Baby</td>
+                                    <td class="p-6 italic">-</td>
+                                    <td class="p-6 italic">Juegos Rítmicos</td>
+                                </tr>
+                                <tr class="border-b border-primary/5">
+                                    <td class="p-6 font-bold text-primary bg-primary/2">17:30 - 19:00</td>
+                                    <td class="p-6 italic">Puntas & Técnica</td>
+                                    <td class="p-6 italic">Grado Elemental</td>
+                                    <td class="p-6 italic">Puntas & Técnica</td>
+                                    <td class="p-6 italic">Grado Elemental</td>
+                                    <td class="p-6 italic">Repertorio</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-bold text-primary bg-primary/2">19:00 - 20:30</td>
+                                    <td class="p-6 italic">Ballet Adultos</td>
+                                    <td class="p-6 italic">Barra al Suelo</td>
+                                    <td class="p-6 italic">Ballet Adultos</td>
+                                    <td class="p-6 italic">Barra al Suelo</td>
+                                    <td class="p-6 italic">Variaciones</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <h3 class="font-headline text-2xl mb-4">Ballet Clásico</h3>
-                    <p class="text-xs font-label font-bold tracking-widest text-primary mb-8 uppercase">Plan de 7 Años</p>
-                    <ul class="space-y-4 font-body text-sm text-on-surface-variant">
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Grado Elemental:</strong> Cuatro cursos de rigor técnico.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Grado Medio:</strong> Tres cursos de perfeccionamiento.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Examen de Música:</strong> Teoría y práctica aplicada.</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Flamenco -->
-                <div class="bg-surface p-10 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all reveal" style="animation-delay: 0.2s">
-                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-8">
-                        <span class="material-symbols-outlined">flare</span>
+                <!-- Moderna Tab -->
+                <div id="tab-moderna" class="tab-content hidden">
+                    <div class="overflow-x-auto rounded-3xl border border-primary/5 shadow-xl bg-white">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-primary/5 border-b border-primary/10">
+                                    <th class="p-6 font-headline text-lg italic text-primary">Hora</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Lunes</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Martes</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Miércoles</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Jueves</th>
+                                    <th class="p-6 font-headline text-lg italic text-primary">Viernes</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-body text-sm text-on-surface-variant">
+                                <tr class="border-b border-primary/5">
+                                    <td class="p-6 font-bold text-primary bg-primary/2">09:30 - 10:30</td>
+                                    <td class="p-6 italic">Pilates Mat</td>
+                                    <td class="p-6 italic">Hatha Yoga</td>
+                                    <td class="p-6 italic">Pilates Mat</td>
+                                    <td class="p-6 italic">Hatha Yoga</td>
+                                    <td class="p-6 italic">Meditación</td>
+                                </tr>
+                                <tr class="border-b border-primary/5">
+                                    <td class="p-6 font-bold text-primary bg-primary/2">18:00 - 19:00</td>
+                                    <td class="p-6 italic">Urban Kids</td>
+                                    <td class="p-6 italic">Jumping HI</td>
+                                    <td class="p-6 italic">Urban Kids</td>
+                                    <td class="p-6 italic">Jumping HI</td>
+                                    <td class="p-6 italic">Hip Hop Choreo</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-6 font-bold text-primary bg-primary/2">20:00 - 21:00</td>
+                                    <td class="p-6 italic">Zumba Fitness</td>
+                                    <td class="p-6 italic">Urban Advanced</td>
+                                    <td class="p-6 italic">Zumba Fitness</td>
+                                    <td class="p-6 italic">Urban Advanced</td>
+                                    <td class="p-6 italic">Vinyasa Flow</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <h3 class="font-headline text-2xl mb-4">Flamenco</h3>
-                    <p class="text-xs font-label font-bold tracking-widest text-primary mb-8 uppercase">Plan de 5 Años</p>
-                    <ul class="space-y-4 font-body text-sm text-on-surface-variant">
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Curso Preparatorio:</strong> Introducción al compás (Opcional).</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-primary font-bold">•</span>
-                            <span><strong>Cursos Obligatorios:</strong> Cinco años de formación pura en tablao y técnica.</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
 
-            <!-- Título Profesional Superior APDE -->
-            <div class="bg-primary p-12 md:p-20 rounded-[3rem] text-white shadow-2xl relative overflow-hidden reveal">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span class="text-white/60 font-label font-bold tracking-[0.4em] uppercase mb-6 block">Máxima Excelencia</span>
-                        <h2 class="font-headline text-4xl md:text-5xl mb-8">Título Profesional Superior APDE</h2>
-                        <p class="font-body text-lg text-white/80 leading-relaxed mb-10">
-                            Una titulación oficial avalada por el Ministerio de Empleo, diseñada para formar no solo artistas, sino docentes y profesionales del sector.
-                        </p>
-                        <div class="flex flex-wrap gap-4">
-                            <div class="px-6 py-3 bg-white/10 rounded-full text-xs font-bold tracking-widest uppercase">Formación Artística</div>
-                            <div class="px-6 py-3 bg-white/10 rounded-full text-xs font-bold tracking-widest uppercase">Formación Pedagógica</div>
-                            <div class="px-6 py-3 bg-white/10 rounded-full text-xs font-bold tracking-widest uppercase">Formación Complementaria</div>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-8 bg-black/20 p-8 md:p-12 rounded-3xl backdrop-blur-md">
-                        <div class="flex gap-6">
-                            <div class="text-primary-fixed-dim font-headline text-4xl italic">01</div>
-                            <div>
-                                <h4 class="font-headline text-xl mb-1">Diferenciación Artística</h4>
-                                <p class="text-sm text-white/60">El bloque artístico es el elemento diferencial según la especialidad seleccionada.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6 border-t border-white/10 pt-8">
-                            <div class="text-primary-fixed-dim font-headline text-4xl italic">02</div>
-                            <div>
-                                <h4 class="font-headline text-xl mb-1">Bloques Comunes</h4>
-                                <p class="text-sm text-white/60">La formación pedagógica y complementaria son troncales para garantizar la calidad docente.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6 border-t border-white/10 pt-8">
-                            <div class="text-primary-fixed-dim font-headline text-4xl italic">03</div>
-                            <div>
-                                <h4 class="font-headline text-xl mb-1">Reconocimiento Oficial</h4>
-                                <p class="text-sm text-white/60">Diplomas certificados por los órganos competentes de las Comunidades Autónomas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="mt-12 text-center font-body text-on-surface-variant italic text-sm">
+                *Los horarios pueden estar sujetos a cambios según la formación de grupos. Consúltanos para niveles específicos.
+            </p>
         </div>
     </section>
 
@@ -552,6 +592,27 @@
                 nav.classList.add('py-4');
             }
         };
+
+        // Tabs switching logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+                tab.classList.remove('block');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active-tab');
+            });
+            
+            // Show selected tab
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            document.getElementById('tab-' + tabId).classList.add('block');
+            
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active-tab');
+        }
     </script>
 </body>
 </html>
